@@ -1,0 +1,29 @@
+<h1>Create a Company</h1>
+
+<%= form_for @company do |f| %>
+
+  <% if @company.errors.any? %>
+    <p>There were errors with your submission:</p>
+
+    <ul>
+      <% @company.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <%= f.submit %>
+<% end %>
